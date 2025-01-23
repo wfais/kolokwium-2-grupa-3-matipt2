@@ -1,11 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Wygeneruj dane (np. 2 tablice x i y o długości 10) za pomocą NumPy.
-# Narysuj wykres punktowy (funkcją ax.scatter(...) lub plt.scatter(...)).
-# Podpisz osie (np. X axis, Y axis) oraz ustaw tytuł.
-# Funkcja ma zwracać obiekt matplotlib.figure.Figure, co ułatwi testy.
-
 
 def draw_scatter_plot():
     """
@@ -15,20 +10,23 @@ def draw_scatter_plot():
     4) Zwróć obiekt Figure.
     """
     np.random.seed(123)
-    
-    # utwórz x, y
-    # x = ...
-    # y = ...
-    
-    # fig, ax = 
-    
-    # ax.scatter( ... )
-    
-    # label dla x, y, title, legend
-    
-    # return rysunek
-    pass
 
-if __name__ == '__main__':
+    x = np.arange(10)
+    y = np.random.rand(10)
+
+    fig, ax = plt.subplots()
+
+    ax.scatter(x, y, label='Punkty danych')
+
+    ax.set_xlabel('X axis')
+    ax.set_ylabel('Y axis')
+    ax.set_title('Wykres punktowy')
+
+    ax.legend()
+
+    return fig
+
+
+if _name_ == '_main_':
     fig = draw_scatter_plot()
     plt.show()
